@@ -11,6 +11,7 @@ namespace Aula6_Pilares_4_Enumeracao
     {
         public int Numero;
         public string Info;
+        public string Status1;
 
 
         public enum Status
@@ -24,25 +25,30 @@ namespace Aula6_Pilares_4_Enumeracao
         public Status ObterTamanho(int Numero)
         {
             Status stat = Status.Novo;
-
-            if (Numero > (int)Status.Enviado) 
+            switch (Numero)
             {
-                stat = Status.Entregue;
+                case 1:
+                    stat = Status.Novo; break;
+                case 2:
+                    stat = Status.Processando; break;
+                case 3: 
+                    stat = Status.Enviado; break;
+                    case 4: 
+                    stat = Status.Entregue; break;
+                
             }
-            if (Numero > (int)Status.Novo && Numero < (int)Status.Enviado)
-            {
-                stat = Status.Processando;
-            }
-            if (Numero > (int)Status.Processando && Numero < (int)Status.Entregue)
-            {
-                stat = Status.Enviado;
-            }
-            else
-                stat = Status.Novo;
-        
 
             Info = stat.ToString();
             return stat;
         }
+
+        public string Atualiz_Pedido()
+        {
+             Status1 = "";
+            return Status1;
+        }
     }
 }
+
+
+

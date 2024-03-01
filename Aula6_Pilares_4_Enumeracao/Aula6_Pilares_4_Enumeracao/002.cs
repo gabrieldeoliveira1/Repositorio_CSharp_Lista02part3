@@ -20,7 +20,16 @@ namespace Aula6_Pilares_4_Enumeracao
         private void _002_Load(object sender, EventArgs e)
         {
             Classe_Pedido cp = new Classe_Pedido();
-            MessageBox.Show("Info do pedido: " + cp.ObterTamanho(1));
+            cp.Status1 = "";
+
+            if (!string.IsNullOrEmpty(cp.Status1))
+            {
+                MessageBox.Show("O Status novo do pedido é: " + cp.Status1);
+            }
+            else
+            {
+                MessageBox.Show("Info do pedido: " + cp.ObterTamanho(4));
+            }
         }
     }
 }
